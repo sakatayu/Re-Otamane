@@ -3,14 +3,14 @@ package com.fefe.mystationalyaac
 import android.app.Activity
 import android.app.Application
 import android.support.v4.app.Fragment
-import com.fefe.mystationalyaac.di.DaggerMyApplicationComponent
+import com.fefe.mystationalyaac.di.DaggerOtamaneApplicationComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
-class MyApplication : Application(), HasActivityInjector, HasSupportFragmentInjector {
+class OtamaneApplication : Application(), HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
@@ -21,7 +21,7 @@ class MyApplication : Application(), HasActivityInjector, HasSupportFragmentInje
     override fun onCreate() {
         super.onCreate()
 
-        DaggerMyApplicationComponent.builder()
+        DaggerOtamaneApplicationComponent.builder()
                 .application(this)
                 .bind()
                 .inject(this)

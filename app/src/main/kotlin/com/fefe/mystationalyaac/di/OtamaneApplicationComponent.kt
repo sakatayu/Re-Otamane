@@ -1,7 +1,7 @@
 package com.fefe.mystationalyaac.di
 
 import android.app.Application
-import com.fefe.mystationalyaac.MyApplication
+import com.fefe.mystationalyaac.OtamaneApplication
 import com.fefe.mystationalyaac.data.DataModule
 import com.fefe.mystationalyaac.ui.ViewModule
 import dagger.BindsInstance
@@ -14,12 +14,12 @@ import javax.inject.Singleton
 @Component(
         modules = [
             AndroidSupportInjectionModule::class,
-            MyApplicationModule::class,
+            OtamaneApplicationModule::class,
             DataModule::class,
             ViewModule::class
         ]
 )
-interface MyApplicationComponent : AndroidInjector<MyApplication>{
+interface OtamaneApplicationComponent : AndroidInjector<OtamaneApplication>{
 
     @Component.Builder
     interface Builder {
@@ -27,8 +27,8 @@ interface MyApplicationComponent : AndroidInjector<MyApplication>{
         @BindsInstance
         fun application(application: Application) : Builder
 
-        fun bind() : MyApplicationComponent
+        fun bind() : OtamaneApplicationComponent
     }
 
-    override fun inject(instance: MyApplication?)
+    override fun inject(instance: OtamaneApplication?)
 }

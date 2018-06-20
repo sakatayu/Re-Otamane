@@ -18,7 +18,9 @@ buildscript {
                 okhttp           : '3.10.0',
                 glide            : '4.7.1',
                 test_runner      : '1.0.2',
-                parcel           : '2.0.6'
+                parcel           : '2.0.6',
+                moshi_converter  : '2.4.0',
+                moshi            : '1.6.0'
         ]
     }
 
